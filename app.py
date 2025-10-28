@@ -4,7 +4,7 @@ import streamlit as st
 
 IMG_FOLDER = 'images/'
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 st.write("# PomoTEST")
 st.write("### Dai un valore alla percentuale di pomodoro rosso nell'immagine.")
 # DATA
@@ -33,15 +33,11 @@ elif prossima != None and prossima:
     else:
         image_index += 1
         st.session_state["image_index"] = image_index
-        slider_rosso_place_holder.empty()
-        conferma_place_holder.empty()
         slider_rosso = slider_rosso_place_holder.slider(f'PERCENTUALE di bacca rossa immagine {image_index+1}', 0, 100, slider_rosso_default, step=1, format="%d%%", key="slider_rosso")
         conferma = conferma_place_holder.button("Conferma", key="conferma")
 
 else:
     st.session_state["image_index"] = image_index
-    slider_rosso_place_holder.empty()
-    conferma_place_holder.empty()
     slider_rosso = slider_rosso_place_holder.slider(f'PERCENTUALE di bacca rossa immagine {image_index+1}', 0, 100, slider_rosso_default, step=1, format="%d%%", key="slider_rosso")
     conferma = conferma_place_holder.button("Conferma", key="conferma")
 
